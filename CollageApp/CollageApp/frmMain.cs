@@ -1,4 +1,4 @@
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CollageApp
 {
@@ -11,6 +11,8 @@ namespace CollageApp
 
         private string imgPathBefore;
         private string imgPathAfter;
+        private Point? beforeImageLocation = null;
+        private Point? afterImageLocation = null;
 
         private void btnBefore_Click(object sender, EventArgs e)
         {
@@ -51,38 +53,96 @@ namespace CollageApp
         }
 
         private void btnCollage_Click(object sender, EventArgs e)
+
         {
+            // Set the default directory for saving images
+            string defaultSaveDirectory = @"D:/AnhSoSanh";
+
+            // Checking if the default directory exists, if not, create it
+            if (!Directory.Exists(defaultSaveDirectory))
+            {
+                Directory.CreateDirectory(defaultSaveDirectory);
+            }
+
             if (string.IsNullOrEmpty(imgPathBefore) || string.IsNullOrEmpty(imgPathAfter))
             {
-                MessageBox.Show("Please select two images first.");
+                MessageBox.Show("Vui lòng chọn ảnh.");
                 return;
             }
 
             Image imageBefore = Image.FromFile(imgPathBefore);
             Image imageAfter = Image.FromFile(imgPathAfter);
 
-            int maxWidth = Math.Max(imageBefore.Width, imageAfter.Width);
+            int maxWidth = imageBefore.Width + imageAfter.Width;
             int totalHeight = Math.Max(imageBefore.Height, imageAfter.Height);
 
-            Bitmap collage = new Bitmap(maxWidth * 2, totalHeight);
+            Bitmap collage = new Bitmap(maxWidth, totalHeight);
 
             using (Graphics g = Graphics.FromImage(collage))
             {
-                // Draw 'Before' image on the left
+                // Fill with white background
+                g.FillRectangle(Brushes.White, 0, 0, collage.Width, collage.Height);
+
+                // Draw 'Before' image
                 g.DrawImage(imageBefore, new Rectangle(0, 0, imageBefore.Width, imageBefore.Height));
 
-                // Draw 'After' image on the right
+                // Draw 'After' image
                 g.DrawImage(imageAfter, new Rectangle(imageBefore.Width, 0, imageAfter.Width, imageAfter.Height));
+
+                // Add 'Before' and 'After' text to the images
+                using (Font font = new Font("Arial", 24, FontStyle.Bold))
+                {
+
+                    // 'Before' text on imageBefore
+                    Rectangle rectBefore = new Rectangle(0, imageBefore.Height - 40, imageBefore.Width, 40);
+                    using (SolidBrush brush = new SolidBrush(Color.White))
+                    {
+                        g.FillRectangle(brush, rectBefore);
+                    }
+                    using (SolidBrush brush = new SolidBrush(Color.Red))
+                    {
+                        StringFormat sf = new StringFormat();
+                        sf.Alignment = StringAlignment.Center;
+                        sf.LineAlignment = StringAlignment.Center;
+
+                        g.DrawString("TRƯỚC", font, brush, rectBefore, sf);
+                    }
+
+                    // 'After' text on imageAfter
+                    Rectangle rectAfter = new Rectangle(imageBefore.Width, imageAfter.Height - 40, imageAfter.Width, 40);
+                    using (SolidBrush brush = new SolidBrush(Color.White))
+                    {
+                        g.FillRectangle(brush, rectAfter);
+                    }
+                    using (SolidBrush brush = new SolidBrush(Color.Red))
+                    {
+                        StringFormat sf = new StringFormat();
+                        sf.Alignment = StringAlignment.Center;
+                        sf.LineAlignment = StringAlignment.Center;
+
+                        g.DrawString("SAU", font, brush, rectAfter, sf);
+                    }
+                }
             }
 
-            // Allow user to choose where to save the collage
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                collage.Save(saveFileDialog.FileName);
-                MessageBox.Show("Collage saved successfully!");
-            }
+            // Get the current date and time to use as part of the file name
+            string currentDateTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            // Define the default file path and name
+            string defaultFilePath = Path.Combine(defaultSaveDirectory, $"Collage_{currentDateTime}.jpg");
+            // Saving the collage directly to the default file path
+            collage.Save(defaultFilePath);
+            MessageBox.Show("Collage saved successfully!");
+            // Open the saved image using the default image viewer
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(defaultFilePath) { UseShellExecute = true });
+        }
+
+        private void btnAlbum_Click(object sender, EventArgs e)
+        {
+            // Set the default directory for saving images
+            string defaultSaveDirectory = @"D:/AnhSoSanh";
+
+            // Open the default picture folder using the default image viewer
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(defaultSaveDirectory) { UseShellExecute = true });
         }
     }
 }

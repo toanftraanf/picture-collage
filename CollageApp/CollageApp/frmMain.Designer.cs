@@ -33,6 +33,7 @@
             btnAfter = new Button();
             pbAfter = new PictureBox();
             btnCollage = new Button();
+            btnAlbum = new Button();
             ((System.ComponentModel.ISupportInitialize)pbBefore).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAfter).BeginInit();
             SuspendLayout();
@@ -52,7 +53,7 @@
             btnBefore.Name = "btnBefore";
             btnBefore.Size = new Size(94, 29);
             btnBefore.TabIndex = 2;
-            btnBefore.Text = "Before";
+            btnBefore.Text = "Trước";
             btnBefore.UseVisualStyleBackColor = true;
             btnBefore.Click += btnBefore_Click;
             // 
@@ -62,7 +63,7 @@
             btnAfter.Name = "btnAfter";
             btnAfter.Size = new Size(94, 29);
             btnAfter.TabIndex = 3;
-            btnAfter.Text = "After";
+            btnAfter.Text = "Sau";
             btnAfter.UseVisualStyleBackColor = true;
             btnAfter.Click += btnAfter_Click;
             // 
@@ -81,15 +82,26 @@
             btnCollage.Name = "btnCollage";
             btnCollage.Size = new Size(94, 29);
             btnCollage.TabIndex = 5;
-            btnCollage.Text = "Collage";
+            btnCollage.Text = "GHÉP";
             btnCollage.UseVisualStyleBackColor = true;
             btnCollage.Click += btnCollage_Click;
+            // 
+            // btnAlbum
+            // 
+            btnAlbum.Location = new Point(12, 616);
+            btnAlbum.Name = "btnAlbum";
+            btnAlbum.Size = new Size(124, 40);
+            btnAlbum.TabIndex = 6;
+            btnAlbum.Text = "Album ảnh";
+            btnAlbum.UseVisualStyleBackColor = true;
+            btnAlbum.Click += btnAlbum_Click;
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1087, 668);
+            Controls.Add(btnAlbum);
             Controls.Add(btnCollage);
             Controls.Add(pbAfter);
             Controls.Add(btnAfter);
@@ -97,7 +109,7 @@
             Controls.Add(pbBefore);
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "GHÉP ẢNH";
             ((System.ComponentModel.ISupportInitialize)pbBefore).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAfter).EndInit();
             ResumeLayout(false);
@@ -110,5 +122,6 @@
         private Button btnAfter;
         private PictureBox pbAfter;
         private Button btnCollage;
+        private Button btnAlbum;
     }
 }
