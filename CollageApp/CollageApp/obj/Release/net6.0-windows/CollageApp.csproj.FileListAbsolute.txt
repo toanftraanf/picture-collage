@@ -1,0 +1,17 @@
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\bin\Release\net6.0-windows\CollageApp.exe
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\bin\Release\net6.0-windows\CollageApp.deps.json
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\bin\Release\net6.0-windows\CollageApp.runtimeconfig.json
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\bin\Release\net6.0-windows\CollageApp.dll
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\bin\Release\net6.0-windows\CollageApp.pdb
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.csproj.AssemblyReference.cache
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.frmMain.resources
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.csproj.GenerateResource.cache
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.AssemblyInfoInputs.cache
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.AssemblyInfo.cs
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.csproj.CoreCompileInputs.cache
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.dll
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\refint\CollageApp.dll
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.pdb
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\CollageApp.genruntimeconfig.cache
+D:\Workspace\Winform\picture-collage\CollageApp\CollageApp\obj\Release\net6.0-windows\ref\CollageApp.dll

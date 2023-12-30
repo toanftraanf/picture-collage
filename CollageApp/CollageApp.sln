@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollageApp", "CollageApp\CollageApp.csproj", "{CDC68A95-31C1-456E-B968-2EF9D4730D1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollageApp", "CollageApp\CollageApp.csproj", "{CDC68A95-31C1-456E-B968-2EF9D4730D1E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CollageApplication", "CollageApplication\CollageApplication.vdproj", "{FC52F377-497F-426A-9F48-0FABFF278CDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{CDC68A95-31C1-456E-B968-2EF9D4730D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDC68A95-31C1-456E-B968-2EF9D4730D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDC68A95-31C1-456E-B968-2EF9D4730D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC52F377-497F-426A-9F48-0FABFF278CDF}.Debug|Any CPU.ActiveCfg = Debug
+		{FC52F377-497F-426A-9F48-0FABFF278CDF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
